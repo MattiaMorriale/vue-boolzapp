@@ -64,97 +64,13 @@
                     </div>
                     <div class="list-contact">
                         <ul>
-                            <li class="list-item">
+                            <li v-for="(contact, index) in contacts" :key="index" class="list-item">
                                 <div class="contact-friend">
                                     <div class="box-img">
-                                        <img src="img/avatar_1.jpg" alt="#">
+                                        <img :src="contact.avatar" alt="#">
                                     </div>
                                     <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_2.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_3.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_4.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_5.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_6.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
-                                        <span>Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="access">
-                                    <span>12:00</span>
-                                </div>
-                            </li>
-                            <li class="list-item">
-                                <div class="contact-friend">
-                                    <div class="box-img">
-                                        <img src="img/avatar_7.jpg" alt="#">
-                                    </div>
-                                    <div class="name">
-                                        <strong>Cassone</strong>
+                                        <strong>{{contact.name}}</strong>
                                         <span>Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
