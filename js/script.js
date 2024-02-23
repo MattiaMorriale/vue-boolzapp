@@ -167,6 +167,8 @@ createApp({
                 }
             ],
 
+            searchContact: '',
+
             newMessage: '',
 
             activeContact: {},
@@ -183,7 +185,9 @@ createApp({
     methods: {
         changeActiveContact(index) {
 
-            this.activeContact = this.contacts[index]
+            const iX = this.contacts.indexOf(this.research[index])
+
+            this.activeContact = this.contacts[iX]
 
         },
 
@@ -205,7 +209,15 @@ createApp({
             }, 1000);
             
         },
+    },
 
+    computed: {
+        research() {
+
+            return this.contacts.filter(contact => {
+               return contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
+            })
+       }
     }
 
 }).mount('#app')

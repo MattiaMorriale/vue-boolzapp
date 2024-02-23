@@ -60,12 +60,12 @@
                     <div class="research">
                         <div class="input-box">
                             <button class="input-button" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input type="text" class="input-bar" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <input v-model="searchContact" type="text" class="input-bar" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1" @keyup.enter="research()">
                         </div>
                     </div>
                     <div class="list-contact">
                         <ul>
-                            <li v-for="(contact, index) in contacts" :key="index" class="list-item" :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
+                            <li v-for="(contact, index) in research" class="list-item" :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
                                 <div class="contact-friend">
                                     <div class="box-img">
                                         <img :src="contact.avatar" alt="#">
