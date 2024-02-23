@@ -193,13 +193,19 @@ createApp({
 
             this.newMessage= '';
 
+            setTimeout(() => {
+                
+                const received = {
+                    message: 'ok',
+                    status: 'received'
+                }
+
+                this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: received.message, status: received.status})
+
+            }, 1000);
+            
         },
 
-        receivedMessage() {
-
-            
-
-        }
     }
 
 }).mount('#app')
