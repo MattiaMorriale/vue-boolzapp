@@ -65,7 +65,7 @@
                     </div>
                     <div class="list-contact">
                         <ul>
-                            <li v-for="(contact, index) in contacts" :key="index" class="list-item">
+                            <li v-for="(contact, index) in contacts" :key="index" class="list-item" :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
                                 <div class="contact-friend">
                                     <div class="box-img">
                                         <img :src="contact.avatar" alt="#">
@@ -87,10 +87,10 @@
                     <div class="profile list-item">
                         <div class="contact-friend">
                             <div class="box-img">
-                                <img src="img/avatar_1.jpg" alt="#">
+                                <img :src="activeContact.avatar" alt="#">
                             </div>
                             <div class="name">
-                                <strong>Cassone</strong>
+                                <strong>{{activeContact.name}}</strong>
                                 <span>Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
@@ -101,24 +101,14 @@
                         </div>
                     </div>
                     <div class="chat-message">
-                        <div class="MYmessage">
-                            <div class="my-message chat-text">
+                        <div v-for="currentMessage in activeContact.messages" 
+                        :class="currentMessage.status == 'sent' ? 'MYmessage' : 'YOUmessage' ">
+                            <div class="chat-text" :class="currentMessage.status == 'sent' ? 'my-message' : 'you-message' ">
                                 <div>
-                                    <p>Hai portato a spasso il cane?</p>
+                                    <p>{{currentMessage.message}}</p>
                                 </div>
-                            </div> 
-                        </div>
-                        <div class="MYmessage">
-                            <div class="my-message chat-text">
-                                <div>
-                                    <p>Ricordarti di stendere i panni</p>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="YOUmessage">
-                            <div class="you-message chat-text">
-                                <div>
-                                    <p>Tutto fatto!</p>
+                                <div class="date">
+                                    <p>{{currentMessage.date}}</p>
                                 </div>
                             </div> 
                         </div>

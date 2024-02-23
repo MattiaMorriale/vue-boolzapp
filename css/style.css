@@ -208,6 +208,10 @@ ul .list-item {
     border-bottom: 1px #e6e5e5 solid ;
 }
 
+.list-item.active{
+    background-color: #e9ebeb;
+}
+
 .list-item .contact-friend {
     display: flex;
 }
@@ -293,6 +297,17 @@ ul .list-item {
 
 .chat-text{
     font-size: 13px;
+
+    position: relative;
+}
+
+.chat-text .date{
+    font-size: 8px;
+
+    right: 6px;
+    bottom: 6px;
+
+    position: absolute;
 }
 
 .my-message {
