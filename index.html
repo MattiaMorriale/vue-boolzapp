@@ -117,7 +117,7 @@
                         <div class="text-input">
                             <i class="fa-regular fa-face-smile"></i>
                             <div class="input-box">
-                                <input type="text" class="input-bar" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <input v-model="newMessage" type="text" class="input-bar" placeholder="Inserisci un messaggio" aria-label="Example text with button addon" aria-describedby="button-addon1" @keyup.enter="addMessage(newMessage)">
                             </div>
                             <i class="fa-solid fa-microphone"></i>
                         </div>
