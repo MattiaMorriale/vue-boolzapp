@@ -195,20 +195,25 @@ createApp({
 
         addMessage() {
 
-            this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: this.newMessage, status: 'sent'})
+            if (this.newMessage.length != 0 && this.newMessage.trim()) {
 
-            this.newMessage= '';
+                this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: this.newMessage, status: 'sent'})
 
-            setTimeout(() => {
+                this.newMessage= '',
                 
-                const received = {
-                    message: 'ok',
-                    status: 'received'
-                }
+                setTimeout(() => {
+                    
+                    const received = {
+                        message: 'ok',
+                        status: 'received'
+                    }
+    
+                    this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: received.message, status: received.status})
+    
+                }, 1000);
 
-                this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: received.message, status: received.status})
+            }
 
-            }, 1000);
             
         },
 
