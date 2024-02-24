@@ -204,7 +204,7 @@ createApp({
                 setTimeout(() => {
                     
                     const received = {
-                        message: 'ok',
+                        message: 'Ciao',
                         status: 'received'
                     }
     
