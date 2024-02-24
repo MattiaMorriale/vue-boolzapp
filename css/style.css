@@ -6,7 +6,7 @@
     font-family: sans-serif;
 }
 
-.container{
+.main-container{
     position: relative;
 }
 
@@ -34,7 +34,7 @@
     height: 100%;
     max-height: calc(100vh - 50px);
     width: 100%;
-    max-width: 1200px;
+    max-width: 80%;
 
     top: 25px;
     left: 50%;
@@ -194,29 +194,38 @@
 
 .list-contact ul{
     list-style-type: none;
+
+    padding: 0;
+    margin-bottom: 0;
 }
 
-ul .list-item {
+ul .list-items {
     display: flex;
     justify-content: space-between;
 
     padding: 10px;
 
-    height: 70px;
+    overflow: hidden;
+
+    max-height: 70px;
     width: 100%;
 
     border-bottom: 1px #e6e5e5 solid ;
 }
 
-.list-item.active{
+.list-items.active{
     background-color: #e9ebeb;
 }
 
-.list-item .contact-friend {
+.list-items .contact-friend {
     display: flex;
 }
 
-.list-item .box-img{
+.contact-friend .name strong{
+    font-size: 15px;
+}
+
+.list-items .box-img{
     height: 50px;
     width: 50px;   
 }
@@ -246,7 +255,7 @@ ul .list-item {
     font-size: 13px;
 }
 
-.list-item .access{
+.list-items .access{
     color: grey;
 
     font-size: 13px;
@@ -310,6 +319,26 @@ ul .list-item {
     position: absolute;
 }
 
+.date p{
+    margin: 0;
+}
+
+.chat-text .chevron {
+    padding-right: 5px;
+
+    opacity: 0;
+
+    transition: ease .2s;
+}
+
+.chat-text:hover .chevron {
+    opacity: 1;
+}
+
+.message-option ul {
+    list-style-type: none;
+}
+
 .my-message {
 
     background-color: #d5f9ba;
@@ -320,7 +349,7 @@ ul .list-item {
     overflow-wrap: break-word;
 
     width: 35%;
-    padding: 18px 10px;
+    padding: 15px 10px 0 10px;
 
     border-radius: 10px;
 
@@ -334,8 +363,13 @@ ul .list-item {
 .you-message {
     background-color: white;
 
+    display: flex;
+    justify-content: space-between;
+
+    overflow-wrap: break-word;
+
     width: 35%;
-    padding: 18px 10px;
+    padding: 15px 10px 0 10px;
 
     border-radius: 10px;
 }

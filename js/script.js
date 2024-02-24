@@ -1,8 +1,10 @@
-const { createApp } = Vue
+const { createApp } = Vue;
+const {DateTime} = luxon;
 
 createApp({
     data() {
         return {
+
             contacts: [
                 {
                     name: 'Denise L. R.',
@@ -209,15 +211,36 @@ createApp({
             }, 1000);
             
         },
+
+        deleteMessage(leX) {
+
+            console.log(leX)
+            const index = this.activeContact.messages.indexOf(leX)
+
+            
+            if (leX.length == 0) {
+                
+                this.activeContact.messages.splice(0, 1)
+                
+            } else {
+
+                this.activeContact.messages.splice(index, 1)
+
+            }
+            console.log(index)
+
+        },
     },
 
     computed: {
         research() {
 
             return this.contacts.filter(contact => {
+
                return contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
+
             })
-       }
+       },
     }
 
 }).mount('#app')
