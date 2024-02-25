@@ -226,6 +226,19 @@ createApp({
     },
 
     methods: {
+        scrollToBottom() {
+            const targetRef = this.$refs.myScrollTarget;
+            this.$nextTick(() => {
+                targetRef.scrollTo(
+                {
+                    top: targetRef.scrollHeight,
+                    left: 0,
+                    behavior: "smooth"
+                }
+                );
+            });
+        },
+
         statusMessage(status) {
             
             if (status == 'sent') {
@@ -242,7 +255,7 @@ createApp({
     
         createContact() {
 
-            this.contacts.push({name: this.newContact, avatar: '../img/generic-avatae-2.jpg', visible: true, messages: [""] });
+            this.contacts.push({name: this.newContact, avatar: '../img/generic-avatae-2.jpg', visible: true, messages: [{date: new Date().toLocaleDateString(), message: 'Conversazione iniziata il', status: 'default'}] });
 
             this.newContact= '';
 
@@ -263,6 +276,8 @@ createApp({
                 this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: this.newMessage, status: 'sent'})
 
                 this.newMessage= '',
+
+                this.scrollToBottom(),
                 
                 setTimeout(() => {
                     
@@ -272,6 +287,8 @@ createApp({
                     }
     
                     this.activeContact.messages.push({date: new Date().toLocaleTimeString(), message: received.message, status: received.status})
+
+                    this.scrollToBottom();
     
                 }, 1000);
 
