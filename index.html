@@ -48,7 +48,13 @@
                         </div>
                         <div class="icon">
                             <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-message dropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu">
+                                <li class="d-flex flex-column w-auto p-2   ">
+                                    <label for="newContact" class="form-label">Crea un nuovo contatto</label>
+                                    <input v-model="newContact" type="text" class="input-bar" id="newContact" aria-describedby="texthepl"  placeholder="Nome del contatto" @keyup.enter="createContact()">
+                                </li>
+                            </ul>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
 
@@ -108,7 +114,7 @@
                     </div>
                     <div class="chat-message">
                         <div v-for="currentMessage in activeContact.messages" 
-                        :class="currentMessage.status == 'sent' ? 'MYmessage' : 'YOUmessage' ">
+                        :class="currentMessage.status">
                             <div class="chat-text" :class="currentMessage.status == 'sent' ? 'my-message' : 'you-message' ">
                                 <div>
                                     <p>{{currentMessage.message}}</p>
@@ -142,9 +148,6 @@
         
     
     </div>
-
-    <!-- luxor time -->
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     
     <!-- script -->
     <script type="text/javascript" src="js/script.js"></script>

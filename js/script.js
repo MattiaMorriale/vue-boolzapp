@@ -1,5 +1,4 @@
 const { createApp } = Vue;
-const {DateTime} = luxon;
 
 createApp({
     data() {
@@ -11,6 +10,11 @@ createApp({
                     avatar: '../img/avatar_io.jpg',
                     visible: true,
                     messages: [
+                        {
+                            date: '1/01/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
                         {
                             date: '15:30:55',
                             message: 'Hai portato a spasso il cane?',
@@ -34,6 +38,11 @@ createApp({
                     visible: true,
                     messages: [
                         {
+                            date: '30/01/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
+                        {
                             date: '16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent'
@@ -55,6 +64,11 @@ createApp({
                     avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
+                        {
+                            date: '02/05/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
                         {
                             date: '10:10:40',
                             message: 'La Marianna va in campagna',
@@ -78,6 +92,11 @@ createApp({
                     visible: true,
                     messages: [
                         {
+                            date: '11/07/2021',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
+                        {
                             date: '15:30:55',
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent'
@@ -95,6 +114,11 @@ createApp({
                     visible: true,
                     messages: [
                         {
+                            date: '23/04/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
+                        {
                             date: '15:30:55',
                             message: 'Ricordati di chiamare la nonna',
                             status: 'sent'
@@ -111,6 +135,11 @@ createApp({
                     avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
+                        {
+                            date: '09/12/2019',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
                         {
                             date: '15:30:55',
                             message: 'Ciao Claudia, hai novità?',
@@ -134,6 +163,11 @@ createApp({
                     visible: true,
                     messages: [
                         {
+                            date: '15/04/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
+                        {
                             date: '15:30:55',
                             message: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent'
@@ -150,6 +184,11 @@ createApp({
                     avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
+                        {
+                            date: '10/01/2020',
+                            message: 'Conversazione iniziata il',
+                            status: 'default'
+                        },
                         {
                             date: '15:30:55',
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
@@ -169,6 +208,8 @@ createApp({
                 }
             ],
 
+            newContact: '',
+
             searchContact: '',
 
             newMessage: '',
@@ -185,6 +226,15 @@ createApp({
     },
 
     methods: {
+
+        createContact() {
+
+            this.contacts.push({name: this.newContact, avatar: '../img/generic-avatae-2.jpg', visible: true, messages: [""] });
+
+            this.newContact= '';
+
+        },
+
         changeActiveContact(index) {
 
             const iX = this.contacts.indexOf(this.research[index])
@@ -235,6 +285,7 @@ createApp({
             console.log(index)
 
         },
+
     },
 
     computed: {

@@ -283,7 +283,7 @@ ul .list-items {
     padding: 10px 0;
 }
 
-.chat-message .MYmessage {
+.chat-message .sent {
     width: 100%;
 
     display: flex;
@@ -294,7 +294,7 @@ ul .list-items {
     margin-bottom: 10px;
 }
 
-.chat-message .YOUmessage {
+.chat-message .received {
     width: 100%;
     display: flex;
     justify-content: start;
