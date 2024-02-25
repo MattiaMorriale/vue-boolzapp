@@ -226,6 +226,7 @@ createApp({
     },
 
     methods: {
+        
         scrollToBottom() {
             const targetRef = this.$refs.myScrollTarget;
             this.$nextTick(() => {
