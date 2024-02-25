@@ -115,7 +115,7 @@
                     <div class="chat-message">
                         <div v-for="currentMessage in activeContact.messages" 
                         :class="currentMessage.status">
-                            <div class="chat-text" :class="currentMessage.status == 'sent' ? 'my-message' : 'you-message' ">
+                            <div class="chat-text" :class="statusMessage(currentMessage.status)">
                                 <div>
                                     <p>{{currentMessage.message}}</p>
                                 </div>

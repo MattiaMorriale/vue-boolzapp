@@ -226,7 +226,20 @@ createApp({
     },
 
     methods: {
+        statusMessage(status) {
+            
+            if (status == 'sent') {
 
+                return `my-message`;
+
+            } else if (status == 'received') {
+
+                return `you-message`
+
+            }
+
+        },
+    
         createContact() {
 
             this.contacts.push({name: this.newContact, avatar: '../img/generic-avatae-2.jpg', visible: true, messages: [""] });

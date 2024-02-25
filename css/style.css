@@ -304,6 +304,37 @@ ul .list-items {
     margin-bottom: 10px;
 }
 
+.chat-message .default {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    background-color: #00000033;
+
+    margin-bottom: 20px;
+}
+
+.default .chat-text{
+    font-size: 20px;
+}
+
+.default .chat-text p{
+    margin: 10px 0;
+}
+
+.default .chat-text .date{
+    display: flex;
+    justify-content: center;
+
+    font-size: 15px;
+
+    position: static;
+}
+
+.default .chevron{
+    display: none;
+}
+
 .chat-text{
     font-size: 13px;
 
