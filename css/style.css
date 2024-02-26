@@ -282,6 +282,12 @@ ul .list-items {
 .list-items .access{
     color: grey;
 
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
     font-size: 13px;
 }
 

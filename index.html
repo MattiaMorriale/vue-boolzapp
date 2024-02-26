@@ -156,21 +156,23 @@
                     <div class="list-contact">
                         <ul>
                             <li v-for="(contact, index) in research" class="list-items" :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
-                                <div class="contact-friend">
+                                <div class="contact-friend position-relative w-100">
                                     <div class="box-img">
                                         <img :src="contact.avatar" alt="#">
                                     </div>
-                                    <div class="name ps-3 d-flex flex-column ">
+                                    <div class="name ps-3 d-flex flex-column">
                                         <strong>{{contact.name}}</strong>
-                                        <span>{{contact.messages[contact.messages.length -1].message}}</span>
+                                        <div v-if="contact.messages.length > 0">
+                                            <span>{{contact.messages[contact.messages.length -1].message}}</span>
+                                            <span class="access">{{contact.messages[contact.messages.length -1].date}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="access">
-                                    <span>{{contact.messages[contact.messages.length -1].date}}</span>
-                                </div>
+                                
                             </li>
                         </ul>
                     </div>
+                </div>
 
 <!--            _        _ _     _                         _             _   
                | |      | (_)   | |                       | |           | |  
@@ -181,7 +183,7 @@
                                                                              
                                                                               -->
 
-                </div>
+                
 
 <!--  _           _          _               
      | |         | |        | |              
@@ -207,7 +209,11 @@
                         <div class="icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" @click="deleteAllMessage()">Cancella messaggi</a></li>
+                                    <li><a class="dropdown-item" href="#" @click="deleteContact()">Cancella Conversazione</a></li>
+                                </ul>
                         </div>
                     </div>
                     <div class="chat-message" ref="myScrollTarget">

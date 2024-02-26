@@ -226,7 +226,6 @@ createApp({
     },
 
     methods: {
-        
         scrollToBottom() {
             const targetRef = this.$refs.myScrollTarget;
             this.$nextTick(() => {
@@ -314,6 +313,19 @@ createApp({
 
             }
             console.log(index)
+
+        },
+
+        deleteAllMessage() {
+
+            this.activeContact.messages.splice(0, this.activeContact.messages.length)
+
+        },
+
+        deleteContact() {
+
+            this.contacts.splice(this.activeContact, 1);
+            this.activeContact.messages.splice(0, this.activeContact.messages.length)
 
         },
 
