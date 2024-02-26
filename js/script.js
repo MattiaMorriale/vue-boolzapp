@@ -215,7 +215,19 @@ createApp({
             newMessage: '',
 
             activeContact: {},
-            
+
+            randomMessages: [
+                'Ciao Mattia, come stai ?',
+                'Andiamo a mangiare una pizza un giorno di questi ?',
+                'Mi sembra un ottima idea',
+                'No mi dispiace, esco con mio cugino questa sera, possiamo fare domani ?',
+                'Scusami vado di fretta ti rispondo dopo',
+                'OK!!',
+                'Come sta Ulisse ? Ha fatto la sua passeggiatina ?',
+                'Gichiamo a Softair alle sei?',
+                'è uscito il nuovo Trailer del DLC di Elden Ring, non stai in hype ?',
+            ],
+
         }
     },
 
@@ -280,9 +292,11 @@ createApp({
                 this.scrollToBottom(),
                 
                 setTimeout(() => {
+
+                    const random = Math.floor(Math.random() * this.randomMessages.length);
                     
                     const received = {
-                        message: 'Ciao',
+                        message: this.randomMessages[random],
                         status: 'received'
                     }
     
