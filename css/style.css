@@ -79,7 +79,7 @@
                                     */
 
 .chat-box .contact{
-    background-color: #ffffff;
+    background-color: white;
 
     width: 35%;
     height: 100%;
@@ -88,7 +88,7 @@
 }
 
 .dark-mode .chat-box .contact{
-    background-color: #2a2929;
+    background-color: #333333;
 
     color: white;
 
@@ -226,7 +226,7 @@
     
     background-color: #333333;
 
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #48484b;
 
 }
 
@@ -284,11 +284,21 @@ ul .list-items {
     max-height: 70px;
     width: 100%;
 
-    border-bottom: 1px #e6e5e5 solid ;
+    border-top: 1px #e6e5e5 solid ;
+}
+
+.dark-mode .list-items {
+
+    border-top: 1px #48484b solid
+
 }
 
 .list-items.active{
     background-color: #e9ebeb;
+}
+
+.dark-mode .list-items.active{
+    background-color: #5a5a5aaa;
 }
 
 .list-items .contact-friend {
@@ -321,6 +331,10 @@ ul .list-items {
     font-size: 17px;
 
     margin-bottom: 4px;
+}
+
+.dark-mode .name strong {
+    color: white;
 }
 
 .name span {
@@ -415,8 +429,20 @@ ul .list-items {
     margin-bottom: 20px;
 }
 
+.dark-mode .default {
+    
+    background-color: #55555588;
+
+}
+
 .default .chat-text{
     font-size: 20px;
+}
+
+.dark-mode .default .chat-text{
+
+    color: white;
+
 }
 
 .default .chat-text p{
@@ -487,6 +513,14 @@ ul .list-items {
 
 }
 
+.dark-mode .my-message{
+
+    background-color: #280b66;
+
+    color: white;
+
+}
+
 .my-message div{
     max-width: 100%;
     overflow-wrap: break-word;
@@ -522,6 +556,12 @@ ul .list-items {
     background-color: #eaeaea;    
 }
 
+.dark-mode .text-input{
+
+    background-color: #333333;
+
+}
+
 .text-input i {
 
     color: grey;
@@ -530,6 +570,12 @@ ul .list-items {
 
     font-size: 20px;
     
+}
+
+.text-input .telegram{
+
+    font-size: 25px;
+
 }
 
 .text-input .input-bar{
@@ -561,9 +607,9 @@ ul .list-items {
 
 #toggle-btn {
 display: inline-block;
-width:50px;
-height: 32px;
-background-color: #1ef4c2;
+width:45px;
+height: 25px;
+background-color: #009688;
 background-image: url('background@2x.png');
 background-size: 100%;
 border-radius: 24px;
@@ -575,12 +621,12 @@ cursor: pointer;
 
 #toggle-btn::before {
 position: absolute;
-width:20px;
-height: 20px;
+width:17px;
+height: 17px;
 background-color: white;
 border-radius: 50%;
-left:5px;
-top:5px;
+left:4px;
+top:3px;
 content: '';
 transition: all ease-in-out .3s;
 z-index: 10;
