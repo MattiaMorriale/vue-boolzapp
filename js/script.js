@@ -238,7 +238,9 @@ createApp({
     },
 
     methods: {
+
         scrollToBottom() {
+
             const targetRef = this.$refs.myScrollTarget;
             this.$nextTick(() => {
                 targetRef.scrollTo(
@@ -248,7 +250,9 @@ createApp({
                     behavior: "smooth"
                 }
                 );
+
             });
+            
         },
 
         statusMessage(status) {
@@ -339,7 +343,12 @@ createApp({
         deleteContact() {
 
             this.contacts.splice(this.activeContact, 1);
-            this.activeContact.messages.splice(0, this.activeContact.messages.length)
+
+            if (this.activeContact >= this.contacts.length) {
+
+                this.activeContact = this.contacts.length -1;
+
+            }
 
         },
 

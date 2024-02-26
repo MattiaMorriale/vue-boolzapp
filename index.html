@@ -28,6 +28,7 @@
     <div id="app">
         <div class="container-fluid p-0">
             
+            
 <!--  _           _                                   _ 
 | |              | |                                 | |
 | |__   __ _  ___| | ____ _ _ __ ___  _   _ _ __   __| |
@@ -36,7 +37,6 @@
 |_.__/ \__,_|\___|_|\_\__, |_|  \___/ \__,_|_| |_|\__,_|
                        __/ |                            
                       |___/                              -->
-
             <div class="nav"></div>
             <div class="back"></div>
 
@@ -241,10 +241,10 @@
                             <div class="input-box">
                                 <input v-model="newMessage" type="text" class="input-bar" placeholder="Inserisci un messaggio" aria-label="Example text with button addon" aria-describedby="button-addon1" @keyup.enter="addMessage()">
                             </div>
-                            <i class="fa-solid fa-microphone"></i>
+                            <i v-if="!newMessage" class="fa-solid fa-microphone"></i>
+                            <i v-else=@click="addMessage()" class="fa-brands fa-telegram" @click="addMessage()"></i>
                         </div>
                     </div>
-
                 </div>
 <!--            _            _           _          _               
                | |          | |         | |        | |              
