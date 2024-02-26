@@ -252,7 +252,7 @@ createApp({
                 );
 
             });
-            
+
         },
 
         statusMessage(status) {
@@ -349,6 +349,14 @@ createApp({
                 this.activeContact = this.contacts.length -1;
 
             }
+
+        },
+
+        toggleDarkMode() {
+
+            document.documentElement.classList.toggle('dark-mode');
+
+            document.documentElement.setAttribute('data-bs-theme="dark"');
 
         },
 
